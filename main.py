@@ -19,12 +19,15 @@ async def start(message: types.Message):
 
 @dp.message_handler(content_types=['text'])
 async def send_text(message: types.Message):
-    if message.text.lower() == "да":
+    msg = message.text.lower()
+    if msg == "да":
         await message.reply("пизда")
-    elif message.text.lower() == "нет":
+    elif msg == "нет":
         await message.reply("пидора ответ")
-    elif message.text.lower() == "привет":
+    elif msg == "привет":
         await message.reply("иди нахуй")
+    elif msg == "лева" or msg == "лев":
+        await message.reply("даун")
     else:
         await message.reply("че это за хуйня")
 
