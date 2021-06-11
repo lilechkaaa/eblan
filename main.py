@@ -10,6 +10,13 @@ bot = Bot(token=os.environ["token"])
 dp = Dispatcher(bot)
 
 
+@dp.message_handler(commands=['start'])
+async def start(message: types.Message):
+    await message.reply("ваня соси бибу\n"
+                        "https://github.com/lilechkaaa/eblan\n"
+                        "питон лучше вашей пососной джавы")
+
+
 @dp.message_handler(content_types=['text'])
 async def send_text(message: types.Message):
     if message.text.lower() == "да":
